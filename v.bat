@@ -3,22 +3,21 @@ title veyoner
 mode 30, 3
 setlocal enabledelayedexpansion
 
-set EXE="C:\Program Files\Veyon\veyon-cli.exe"
+set "EXE=C:\Program Files\Veyon\veyon-cli.exe"
 
 :loop
 set /p command=$ 
 
 if "%command%"=="" goto loop
 
-set cmdlower=%command%
-set cmdlower=%cmdlower:"=%
-for %%A in ("%cmdlower%") do set cmdlower=%%~A
-set cmdlower=%cmdlower:~0,999%
-set cmdlower=%cmdlower: =%
+set "cmdlower=%command%"
+for %%A in ("%cmdlower%") do set "cmdlower=%%~A"
+set "cmdlower=%cmdlower: =%"
 
 if /i "%cmdlower%"=="connect" (
-    set /p ip=ip $ 
-    %EXE% remoteaccess view %ip%
+    set /p ip=10.10.2.
+    rem Use CALL with doubled percent to expand %ip% at runtime
+    call "%EXE%" remoteaccess view 10.10.2.%%ip%%
     goto loop
 )
 
