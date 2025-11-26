@@ -10,7 +10,6 @@ set /p command=$
 
 if "%command%"=="" goto loop
 
-rem Normalize input (remove quotes and spaces)
 set "cmdlower=%command%"
 for %%A in ("%cmdlower%") do set "cmdlower=%%~A"
 set "cmdlower=%cmdlower: =%"
