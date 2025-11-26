@@ -17,8 +17,8 @@ set cmdlower=%cmdlower:~0,999%
 set cmdlower=%cmdlower: =%
 
 if /i "%cmdlower%"=="connect" (
-    set /p ip=10.10.2.
-    %EXE% remoteaccess view 10.10.2.%ip%
+    set /p ip=ip $ 
+    %EXE% remoteaccess view %ip%
     goto loop
 )
 
