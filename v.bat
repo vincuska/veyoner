@@ -16,7 +16,6 @@ set "cmdlower=%cmdlower: =%"
 
 if /i "%cmdlower%"=="connect" (
     set /p ip=10.10.2.
-    rem Use CALL with doubled percent to expand %ip% at runtime
     call "%EXE%" remoteaccess view 10.10.2.%%ip%%
     goto loop
 )
