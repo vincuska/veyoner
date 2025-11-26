@@ -1,4 +1,6 @@
 @echo off
+title veyoner
+mode 30, 3
 setlocal enabledelayedexpansion
 
 set EXE="C:\Program Files\Veyon\veyon-cli.exe"
@@ -19,7 +21,7 @@ if /i "%cmdlower%"=="exit" (
     exit /b
 )
 
-if /i "%cmdlower%"=="search" (
+if /i "%cmdlower%"=="scan" (
     %EXE% networkobjects list
     goto loop
 )
