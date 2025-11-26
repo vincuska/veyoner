@@ -21,11 +21,6 @@ if /i "%cmdlower%"=="exit" (
     exit /b
 )
 
-if /i "%cmdlower%"=="scan" (
-    %EXE% networkobjects list
-    goto loop
-)
-
 if /i "%cmdlower%"=="setip" (
     set /p ip=ip $ 
     goto loop
