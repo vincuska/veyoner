@@ -26,21 +26,6 @@ if /i "%cmdlower%"=="setip" (
     goto loop
 )
 
-if /i "%cmdlower%"=="disable" (
-    %EXE% service stop
-    %EXE% service unregister
-
-    for %%F in (
-        MonitoringMode
-        RemoteControl
-        RemoteView
-        Lock
-    ) do (
-        %EXE% feature stop 127.0.0.1 %%F
-    )
-    goto loop
-)
-
 if /i "%cmdlower%"=="control" (
     if "%ip%"=="" (
         echo No target.
