@@ -21,26 +21,9 @@ if /i "%cmdlower%"=="exit" (
     exit /b
 )
 
-if /i "%cmdlower%"=="setip" (
-    set /p ip=ip $ 
-    goto loop
-)
-
-if /i "%cmdlower%"=="control" (
-    if "%ip%"=="" (
-        echo No target.
-    ) else (
-        %EXE% remoteaccess control %ip%
-    )
-    goto loop
-)
-
-if /i "%cmdlower%"=="view" (
-    if "%ip%"=="" (
-        echo No target.
-    ) else (
-        %EXE% remoteaccess view %ip%
-    )
+if /i "%cmdlower%"=="connect" (
+    set /p ip=10.10.2.
+    %EXE% remoteaccess view 10.10.2.%ip%
     goto loop
 )
 
