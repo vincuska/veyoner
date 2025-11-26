@@ -16,10 +16,6 @@ for %%A in ("%cmdlower%") do set cmdlower=%%~A
 set cmdlower=%cmdlower:~0,999%
 set cmdlower=%cmdlower: =%
 
-if /i "%cmdlower%"=="exit" (
-    exit /b
-)
-
 if /i "%cmdlower%"=="connect" (
     set /p ip=10.10.2.
     %EXE% remoteaccess view 10.10.2.%ip%
