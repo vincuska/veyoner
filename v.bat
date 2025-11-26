@@ -10,13 +10,14 @@ set /p command=$
 
 if "%command%"=="" goto loop
 
+rem Normalize input (remove quotes and spaces)
 set "cmdlower=%command%"
 for %%A in ("%cmdlower%") do set "cmdlower=%%~A"
 set "cmdlower=%cmdlower: =%"
 
 if /i "%cmdlower%"=="connect" (
     set /p ip=10.10.2.
-    call "%EXE%" remoteaccess view 10.10.2.%%ip%%
+    "%EXE%" remoteaccess view 10.10.2.!ip!
     goto loop
 )
 
