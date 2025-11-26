@@ -14,7 +14,7 @@ while True:
     if command == "":
         continue
 
-    if command == "search":
+    if command == "scan":
         run("networkobjects list")
 
     elif command == "setip":
@@ -34,3 +34,4 @@ while True:
 
     else:
         print("Invalid command.")
+
