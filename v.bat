@@ -4,7 +4,6 @@ mode 30, 3
 setlocal enabledelayedexpansion
 
 set EXE="C:\Program Files\Veyon\veyon-cli.exe"
-set ip=
 
 :loop
 set /p command=$ 
